@@ -5,8 +5,10 @@
 
 # required package
 library(Rfacebook)
+#!!! Working direktory
+setwd("M://Github/jenztollesachen")
 #!!! Fb token, needs to be generated at https://developers.facebook.com/tools/explorer (attention: will expire soon)
-fbtoken = "CAACEdEose0cBAGGBkRQw1ZCqHiAjRICAekwGk8vmBPkhsg4YNlPKWFc8IgNcFdga3KyDDTMkh5OSiO5bqGWBj2q9NQBNHSahzEyNGMAkZAFWTivJQlNcuKp61wSKdLCszwY4daoZCNmWAo0FnpImEb7otFNgZAnCTKf9bumOSMaW05lxNYH2Ex3ZACbBMYMRdgs1eVfKOhMj9FzLxA7c2N3uZBrVBdN6IZD"
+fbtoken = "CAACEdEose0cBAJZCHAewF8HmVe9fH0NqC1DfuIuXgHU4xXcjZBXVzZBV42JAFtxPZCB22IuXmXhCL9AZBLwiAz57ammDbvfi7pkQlz3tQrAo1FXAPlDZC2qaMK607gKBbRvuPDj1nfLHzg6Gn8UG9CmOCxDqyOBHYeCUR3fod3jGrrU5fX06IBJZApFuaoGDZApy2Cp8eegFKz1sgL8JvcJnsKlq3PpNsn8ZD"
 #!!! Fb page, such as https://www.facebook.com/rbloggers
 fbname = "rbloggers"
 #!!! count of posts you want to scrape
@@ -36,6 +38,6 @@ for (i in 1:count) {
 }
 # save data
 output$Content = gsub(pattern="\n",replacement="; ",output$Content,fixed=TRUE)
-write.table(output,"M://Github/Facebook.csv",sep=";",eol="\r",row.names=FALSE,na="")
+write.table(output,paste("Fb_",fbname,".csv",sep=""),sep=";",eol="\r",row.names=FALSE,na="")
 
 
